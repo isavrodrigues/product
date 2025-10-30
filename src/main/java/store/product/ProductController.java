@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "product", url = "http://product:8080")
+@FeignClient(name = "product", url = "${product.service.url:http://product:8080}")
 public interface ProductController {
     
     @PostMapping("/product")
